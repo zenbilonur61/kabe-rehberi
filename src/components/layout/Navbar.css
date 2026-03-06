@@ -1,0 +1,265 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--space-4) 0;
+    background-color: transparent;
+    transition: all var(--transition-normal);
+    z-index: 100;
+}
+
+.navbar.scrolled {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-3) 0;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    max-width: 1320px;
+    position: relative;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    margin-right: var(--space-6);
+    flex-shrink: 0;
+}
+
+.navbar-logo-component {
+    height: 90px;
+    /* Big logo as requested */
+    width: auto;
+    transition: all var(--transition-normal);
+}
+
+.navbar.scrolled .navbar-logo-component {
+    height: 65px;
+    /* Still relatively large but compact enough */
+}
+
+/* Fix text colors for scrolled state */
+.navbar.scrolled .navbar-logo-component .logo-title,
+.navbar.scrolled .navbar-logo-component .logo-subtitle {
+    color: var(--color-primary) !important;
+}
+
+[data-theme='dark'] .navbar.scrolled .navbar-logo-component .logo-title,
+[data-theme='dark'] .navbar.scrolled .navbar-logo-component .logo-subtitle {
+    color: var(--color-primary-light) !important;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    /* Visible on hero */
+    position: relative;
+    padding: var(--space-2) 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled .nav-item {
+    color: var(--color-text-muted);
+    text-shadow: none;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-light);
+    transition: width var(--transition-normal);
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--color-secondary-light);
+    /* Golden highlight on dark hero */
+}
+
+.navbar.scrolled .nav-item:hover,
+.navbar.scrolled .nav-item.active {
+    color: var(--color-primary);
+}
+
+[data-theme='dark'] .nav-item:hover,
+[data-theme='dark'] .nav-item.active {
+    color: var(--color-secondary-light);
+}
+
+[data-theme='dark'] .navbar.scrolled .nav-item:hover,
+[data-theme='dark'] .navbar.scrolled .nav-item.active {
+    color: var(--color-primary-light);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+    background-color: var(--color-secondary-light);
+}
+
+.navbar.scrolled .nav-item:hover::after,
+.navbar.scrolled .nav-item.active::after {
+    background-color: var(--color-primary-light);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-bg-elevated);
+    color: var(--color-text-main);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-bg-elevated);
+    color: var(--color-text-main);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover,
+.mobile-menu-toggle:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: var(--space-3) 0;
+    }
+
+    .nav-container {
+        gap: var(--space-4);
+        max-width: none;
+    }
+
+    .navbar-logo-component {
+        height: 70px;
+    }
+
+    .nav-logo {
+        margin-right: 0;
+    }
+
+    .nav-logo .logo-text-wrapper {
+        transform: scale(0.78);
+        transform-origin: left center;
+        margin-left: -0.6rem;
+    }
+
+    .mobile-menu-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-1);
+        padding: var(--space-3);
+        border-radius: var(--radius-xl);
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--shadow-lg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    [data-theme='dark'] .nav-links {
+        background: rgba(15, 23, 42, 0.96);
+        border-color: rgba(51, 65, 85, 0.95);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-item {
+        color: var(--color-text-main);
+        text-shadow: none;
+        padding: 0.9rem 1rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .navbar.scrolled .nav-item {
+        color: var(--color-text-main);
+    }
+
+    [data-theme='dark'] .nav-item,
+    [data-theme='dark'] .navbar.scrolled .nav-item {
+        color: rgba(226, 232, 240, 0.92);
+    }
+
+    .nav-item::after {
+        display: none;
+    }
+
+    .nav-item:hover,
+    .nav-item.active,
+    .navbar.scrolled .nav-item:hover,
+    .navbar.scrolled .nav-item.active {
+        background: rgba(217, 119, 6, 0.08);
+        color: var(--color-primary);
+    }
+
+    [data-theme='dark'] .nav-item:hover,
+    [data-theme='dark'] .nav-item.active,
+    [data-theme='dark'] .navbar.scrolled .nav-item:hover,
+    [data-theme='dark'] .navbar.scrolled .nav-item.active {
+        color: var(--color-primary-light);
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-logo-component {
+        height: 62px;
+    }
+
+    .nav-logo .logo-text-wrapper {
+        transform: scale(0.68);
+        margin-left: -1rem;
+    }
+}

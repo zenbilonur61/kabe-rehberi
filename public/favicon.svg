@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="goldBand" x1="126" y1="191" x2="387" y2="191" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D49A33"/>
+      <stop offset="0.5" stop-color="#F2D36B"/>
+      <stop offset="1" stop-color="#E5B94A"/>
+    </linearGradient>
+    <linearGradient id="doorFill" x1="288" y1="353" x2="338" y2="353" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D39A39"/>
+      <stop offset="1" stop-color="#F4DB75"/>
+    </linearGradient>
+    <linearGradient id="baseFill" x1="130" y1="388" x2="382" y2="388" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8E4DD"/>
+      <stop offset="0.5" stop-color="#F6F3EE"/>
+      <stop offset="1" stop-color="#DDD8CF"/>
+    </linearGradient>
+    <filter id="cardShadow" x="44" y="44" width="424" height="424" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#cardShadow)">
+    <rect x="64" y="64" width="384" height="384" rx="88" fill="#F5F5F4"/>
+  </g>
+
+  <path d="M126 386C151 368 194 359 256 359C318 359 361 368 386 386V393H126V386Z" fill="url(#baseFill)"/>
+  <path d="M114 394C148 379 196 373 256 373C316 373 364 379 398 394C320 399 192 399 114 394Z" fill="#E5E1DA"/>
+
+  <path d="M150 204L256 166V204L150 242V204Z" fill="#06070A"/>
+  <path d="M256 166L364 204V334L256 334V166Z" fill="#262626"/>
+  <path d="M150 204L256 204V334L150 334V204Z" fill="#050608"/>
+  <path d="M256 204L364 204V334L256 334V204Z" fill="#272726"/>
+
+  <path d="M150 188L256 149L364 188L256 226L150 188Z" fill="#0C0D10"/>
+
+  <path d="M150 225L256 189L364 225L364 238L256 203L150 238V225Z" fill="url(#goldBand)"/>
+
+  <circle cx="171" cy="254" r="8" fill="#D9A23E"/>
+  <circle cx="205" cy="243" r="8" fill="#E1B14D"/>
+  <circle cx="228" cy="235" r="8" fill="#E6BC58"/>
+  <circle cx="284" cy="235" r="8" fill="#E7C65E"/>
+  <circle cx="308" cy="243" r="8" fill="#ECCA63"/>
+  <circle cx="341" cy="254" r="8" fill="#E9BE57"/>
+  <circle cx="288" cy="258" r="5" fill="#D0A443"/>
+
+  <path d="M288 333V291C288 270 306 254 325 254C344 254 362 270 362 291V333H288Z" fill="#F1D56B"/>
+  <path d="M295 333V291C295 274 308 261 325 261V333H295Z" fill="#D79A38"/>
+  <path d="M325 261C342 261 355 274 355 291V333H325V261Z" fill="url(#doorFill)"/>
+</svg>

@@ -1,0 +1,4 @@
+Contact: mailto:info@kaberehberi.app
+Expires: 2027-03-06T00:00:00.000Z
+Preferred-Languages: tr, en
+Canonical: https://kaberehberi.app/.well-known/security.txt

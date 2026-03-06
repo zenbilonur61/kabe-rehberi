@@ -1,0 +1,42 @@
+.umrah-banner {
+    background-color: var(--color-primary);
+    background-image: linear-gradient(to right, #0f172a, #1e293b);
+}
+
+.umrah-bg {
+    /* Using the mecca background as placeholder, or user can provide a specific kaaba crowd image */
+    background-image: url('/mecca_card_img.png');
+    opacity: 0.2;
+}
+
+.tavsiye-card {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-secondary);
+    transition: transform var(--transition-fast);
+}
+
+.tavsiye-card:hover {
+    transform: translateY(-5px);
+}
+
+.tavsiye-card h4 {
+    color: var(--color-text-main);
+    margin-top: 0;
+    margin-bottom: var(--space-2);
+    font-size: 1.15rem;
+}
+
+/* Danger Theme for Accordion (Ihram yasakları) */
+.theme-danger .accordion-item.open {
+    border-color: #EF4444;
+    /* Red 500 */
+}
+
+.theme-danger .accordion-number {
+    background-color: #EF4444;
+}
+
+.theme-danger .accordion-icon.rotate {
+    color: #EF4444;
+}

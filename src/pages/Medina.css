@@ -1,0 +1,57 @@
+/* Medina Specific Overrides over Mecca.css */
+.medina-page {
+    /* Using emerald green as primary for Medina styling instead of gold */
+    --color-secondary: var(--color-primary-light);
+    --color-secondary-light: #34D399;
+    /* Emerald 400 */
+}
+
+/* Base components theme overrides */
+.theme-emerald {
+    --color-secondary: var(--color-primary-light);
+    --color-secondary-light: #34D399;
+}
+
+.medina-banner {
+    background-color: #064E3B;
+    /* Emerald 900 */
+}
+
+.medina-bg {
+    background-image: url('/medina_card_img.png');
+    opacity: 0.45;
+}
+
+.medina-sidebar .sidebar-title {
+    border-bottom-color: var(--color-primary-light);
+}
+
+.medina-sidebar .sidebar-nav a:hover {
+    color: var(--color-primary-light);
+    border-left-color: var(--color-primary-light);
+    background-color: rgba(5, 150, 105, 0.05);
+    /* Emerald */
+}
+
+.medina-intro {
+    border-left-color: var(--color-primary-light);
+}
+
+.medina-quote {
+    background-color: rgba(5, 150, 105, 0.05);
+    /* Emerald 600 */
+    border-left-color: var(--color-primary-light);
+}
+
+.medina-quote .quote-icon {
+    color: var(--color-primary-light);
+}
+
+.medina-page .sub-heading {
+    color: var(--color-primary-light);
+}
+
+[data-theme='dark'] .medina-page .sub-heading {
+    color: #34D399;
+    /* Emerald 400 */
+}
